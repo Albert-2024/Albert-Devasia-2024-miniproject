@@ -1,0 +1,65 @@
+ecommerce_website/
+|-- backend/
+|   |-- controllers/
+|   |   |-- userController.js
+|   |   |-- sellerController.js
+|   |   |-- deliveryBoyController.js
+|   |   |-- adminController.js
+|   |-- models/
+|   |   |-- user.js
+|   |   |-- seller.js
+|   |   |-- deliveryBoy.js
+|   |   |-- admin.js
+|   |-- routes/
+|   |   |-- userRoutes.js
+|   |   |-- sellerRoutes.js
+|   |   |-- deliveryBoyRoutes.js
+|   |   |-- adminRoutes.js
+|   |-- services/
+|   |   |-- userService.js
+|   |   |-- sellerService.js
+|   |   |-- deliveryBoyService.js
+|   |   |-- adminService.js
+|   |-- utils/
+|   |   |-- authentication.js
+|   |   |-- authorization.js
+|   |   |-- validations.js
+|   |-- app.js (or index.js)
+|-- frontend/
+|   |-- public/
+|   |-- src/
+|   |   |-- components/
+|   |   |   |-- User/
+|   |   |   |-- Seller/
+|   |   |   |-- DeliveryBoy/
+|   |   |   |-- Admin/
+|   |   |-- pages/
+|   |   |   |-- UserDashboard.js
+|   |   |   |-- SellerDashboard.js
+|   |   |   |-- DeliveryBoyDashboard.js
+|   |   |   |-- AdminDashboard.js
+|   |   |-- services/
+|   |   |   |-- apiService.js
+|   |   |   |-- authService.js
+|   |   |-- utils/
+|   |   |   |-- helpers.js
+|   |   |   |-- constants.js
+|   |   |   |-- validations.js
+|   |   |-- App.js
+|   |   |-- index.js
+|-- database/
+|   |-- migrations/
+|   |-- seeds/
+|-- tests/
+|   |-- backend/
+|   |   |-- userController.test.js
+|   |   |-- sellerController.test.js
+|   |   |-- deliveryBoyController.test.js
+|   |   |-- adminController.test.js
+|   |-- frontend/
+|   |   |-- userTests.js
+|   |   |-- sellerTests.js
+|   |   |-- deliveryBoyTests.js
+|   |   |-- adminTests.js
+|-- README.md
+|-- package.json
