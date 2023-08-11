@@ -1,5 +1,5 @@
 import React from 'react';
-import Registration from './components/registration/Buyer';
+import Form from './components/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <Registration />
+       <Form />
       </header>
     </div>
   );
