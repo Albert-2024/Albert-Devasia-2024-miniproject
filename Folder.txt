@@ -26,10 +26,6 @@ ecommerce_website/
 |   |   |-- validations.js
 |   |-- app.js (or index.js)
 |-- frontend/
-
-sdf
-sdfdf
-
 |   |-- public/
 |   |-- src/
 |   |   |-- components/
