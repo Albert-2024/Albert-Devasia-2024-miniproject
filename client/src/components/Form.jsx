@@ -36,19 +36,16 @@ const Form = () => {
 
 
     return (
-        <Stack h={400} justify="space-around" sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] })}>
+        <Stack h={400} mah={1000} justify="space-around" sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[3] })}>
             <Box maw={400}  c="blue"mx="auto">
 
 
-                <div className='form' >
+                <div className='form'  >
                     <form style={{
                         width: '400px',
                         height: '350px',
                     }}
-                        onSubmit={form.onSubmit((values) => console.log(values))}>
-
-                        
-                        
+                        onSubmit={form.onSubmit((values) => console.log(values))}>  
                         <TextInput
                             mt="lg"
                             placeholder="Your name"
