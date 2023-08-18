@@ -1,22 +1,26 @@
 import React,{useState} from 'react'
+import {Link} from 'react-router-dom';
+import Validation from './Loginvalidation';
 
 const Login = () => {
-  const [value, setValue] = useState({
+  const [value, setValues] = useState({
     email: '',
     password: ''
   })
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
+  const [errors, setErrors] = useState({})
 
-
-    }
     const handleChange = (event) => {
-      email = event.target.value
-      event.preventDefault();
+      setValues(prev => ({...prev,[event.target.name]: event.target.value})
+      )
     }
+
+     const handleSubmit = (event) => {
+      event.preventDefault();
+      setErrors(Validation())
+
+    }
+  
 
   return (
     <section className="vh-100 d-flex justify-content-center align-items-center">
@@ -29,17 +33,20 @@ const Login = () => {
             <input
               type="email"
               placeholder="Email"
-              value={email}
+              name='email'
+              // value={errors.email}
               onChange={handleChange}
               className='form-control mt-1'
 
               />
+            {errors.email} <span className='text-danger'>{errors.email}</span>
             </div>
             <div className="form-group mt-3">
               <input
                 type="password"
                 placeholder='password'
-                value={password}
+                name='password'
+                // value={password}
                 onChange={handleChange}
                 className='form-control mt-1'
               />
