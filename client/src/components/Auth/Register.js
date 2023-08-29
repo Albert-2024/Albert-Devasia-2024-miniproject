@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom'
 import { Link, useNavigate } from 'react-router-dom'
 import Validation from './Loginvalidation';
 
 const Register = () => {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
-  const [conPass, setConPass] = useState('');
+  const navigate = useNavigate();
+  
   const [values, setValues] = useState({
     username: '',
     email: '',
@@ -17,17 +16,21 @@ const Register = () => {
 
   const [err, setErr] = useState({})
 
+  const handleChange = (e) => {
+    const {name, value}= e.target;
+    setValues(prev => ({ ...prev, [name]: value }))
+  }
+
   const handleRegister = (e) => {
     e.preventDefault();
     //  setErr(validation(values));
-    console.log(values);
+    localStorage.setItem('values', JSON.stringify(values));
     // username = e.target.username;
     // email = e.target.email;
     
     fetch('http://localhost:5000/add', {
       method: 'POST',
-      headers:{'content-type': 'application/json'},
-      
+      headers:{'content-type': 'application/json'}, 
       body: JSON.stringify({ "username":values.username, "email":values.email, "password":values.password })
   })
   .then(response => {
@@ -39,15 +42,13 @@ const Register = () => {
       throw new Error('Network response is not ok')
     }
      }).then(data =>{
-         console.log(data)
+         navigate('/login')
       })
-      .catch(error=> {
+      .catch(error => {
         console.log('fetch error:error')
   })
   }
-    const handleChange = (e) => {
-      setValues(prev => ({ ...prev, [e.target.name]: e.target.value }))
-    }
+    
 
 
   return (
@@ -104,7 +105,7 @@ const Register = () => {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type='submit' className='btn btn-default border w-100  rounded-5 text-decoration'>Regsiter</button>
+              <button type='submit' className='btn btn-default border w-100  rounded-5 text-decoration'>Register</button>
             </div>
             <p className="forgot-password text-right mt-2">
               <a href="#"> Forgot password?</a><br />
