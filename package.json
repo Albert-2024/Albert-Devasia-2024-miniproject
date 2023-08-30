@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "dotgitignore": "^2.1.0",
     "react-router-dom": "^6.15.0"
   }

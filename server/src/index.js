@@ -10,7 +10,7 @@ app.use(cors())
 // app.set('view engine', 'html');
 
 // app.set('views',(path.join(__dirname,'../views')))
-// app.use(express.urlencoded({extended:false}))
+// app.use(express.urlencoded({extendwhen i push a commit my data has been lost in remote server mainly myed:false}))
 
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())

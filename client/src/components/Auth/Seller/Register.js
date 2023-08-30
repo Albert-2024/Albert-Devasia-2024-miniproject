@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom'
 import { Link, useNavigate } from 'react-router-dom'
-import Validation from './Loginvalidation';
+import Validation from '../Loginvalidation';
 
 const Register = () => {
 
@@ -23,30 +23,26 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    //  setErr(validation(values));
     localStorage.setItem('values', JSON.stringify(values));
-    // username = e.target.username;
-    // email = e.target.email;
-    
     fetch('http://localhost:5000/add', {
       method: 'POST',
-      headers:{'content-type': 'application/json'}, 
-      body: JSON.stringify({ "username":values.username, "email":values.email, "password":values.password })
-  })
-  .then(response => {
-    if(response.ok){
-      response.json().then((data) => {
-        console.log("Success")
-      })
-    }else{
-      throw new Error('Network response is not ok')
-    }
-     }).then(data =>{
-         navigate('/login')
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ "username": values.username, "email": values.email, "password": values.password })
+    })
+      .then(response => {
+        if (response.ok) {
+          response.json().then((data) => {
+            console.log("Success")
+          })
+        } else {
+          throw new Error('Network response is not ok')
+        }
+      }).then(data => {
+        navigate('/login')
       })
       .catch(error => {
         console.log('fetch error:error')
-  })
+      })  
   }
     
 
@@ -60,7 +56,7 @@ const Register = () => {
             <h3 className="Auth-form-title">Register</h3>
             <div className="form-group mt-3">
               <input
-              name='username'
+                name='username'
                 type="text"
                 placeholder=" Enter Name"
                 value={values.username}
@@ -84,7 +80,7 @@ const Register = () => {
 
             <div className="form-group mt-3">
               <input
-              name='password'
+                name='password'
                 type="password"
                 placeholder='password'
                 className='form-control mt-1'
@@ -95,7 +91,7 @@ const Register = () => {
             </div>
             <div className="form-group mt-3">
               <input
-              name='conPass'
+                name='conPass'
                 type="password"
                 placeholder='Confirm password'
                 className='form-control mt-1'
