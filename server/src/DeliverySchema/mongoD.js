@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost:27017/Ecommerce')
 
 .catch((err) => console.log('error'));
 
-const RegSchema = new mongoose.Schema({
+const DeliveryRegSchema = new mongoose.Schema({
     username:{
         type:String,
         required:true,
@@ -22,6 +22,6 @@ const RegSchema = new mongoose.Schema({
     }
 })
 
-const collection = new mongoose.model('RegSchema',RegSchema);
+const collectionDelivery =  new mongoose.model('collectiondelivery',DeliveryRegSchema);
 
-module.exports = collection;
+module.exports = collectionDelivery;
