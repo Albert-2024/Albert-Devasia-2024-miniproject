@@ -55,7 +55,7 @@ const RegisterU = () => {
                 value={values.username}
                 className='form-control mt-1'
                 onChange={handleChange}
-              // (e) => setEmail(e.target.value)
+            
               />
             </div>
             <div className="form-group mt-3">
@@ -95,7 +95,7 @@ const RegisterU = () => {
             </div>
             <p className="forgot-password text-right mt-2">
               <a href="#"> Forgot password?</a><br />
-              <Link to="/login" className=' w-100 bg-light rounded-2 text-decoration'>Login</Link>
+              <Link to="/delivery/login" className=' w-100 bg-light rounded-2 text-decoration'>Login</Link>
             </p>
           </div>
         </form>

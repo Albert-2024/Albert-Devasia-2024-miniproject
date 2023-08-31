@@ -78,6 +78,7 @@ const Login = () => {
             </div>
             <div className="d-grid gap-2 mt-3">
               <button type='submit' className='btn btn-default border w-100  rounded-5 text-decoration' onClick={handleSubmit}>Login</button>
+              <Link to="/seller/register"> Don't have an Account? Register</Link>
             </div>
           </div>
          </form>

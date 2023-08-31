@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 
 const RegisterU = () => {
-    const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
     const [values, setValues] = useState({
         username: '',
@@ -20,7 +21,7 @@ const RegisterU = () => {
     const handleRegister = (e) => {
         e.preventDefault();
         localStorage.setItem('values', JSON.stringify(values));
-        fetch('http://localhost:5000/add', {
+        fetch('http://localhost:5000/user', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ "username": values.username, "email": values.email, "password": values.password })
@@ -34,7 +35,7 @@ const RegisterU = () => {
               throw new Error('Network response is not ok')
             }
           }).then(data => {
-            navigate('/login')
+            navigate('/user/login')
           })
           .catch(error => {
             console.log('fetch error:error')
@@ -98,7 +99,7 @@ const RegisterU = () => {
             </div>
             <p className="forgot-password text-right mt-2">
               <a href="#"> Forgot password?</a><br />
-              <Link to="/login" className=' w-100 bg-light rounded-2 text-decoration'>Login</Link>
+              <Link to="/User/login" className=' w-100 bg-light rounded-2 text-decoration'>Login</Link>
             </p>
           </div>
         </form>

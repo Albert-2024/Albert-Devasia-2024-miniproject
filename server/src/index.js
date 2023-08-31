@@ -14,7 +14,7 @@ app.use(cors())
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
-app.post('/add', async (req, res) => {
+/* app.post('/user', async (req, res) => {
     try {
         const data = req.body
         console.log(data)
@@ -24,7 +24,21 @@ app.post('/add', async (req, res) => {
         console.log(error)
         res.status(500).json({ error: 'An error occured' })
     }
+}) */
+
+app.post('/seller', async (req, res) => {
+    try {
+        const data = req.body
+        console.log(data)
+        const insert = await collectionSeller.create(data);
+        res.status(200).json({ message: "Data inserted successfully" })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: 'An error occured' })
+    }
 })
+
+
 app.get('/', (req, res) => {
     res.send('Welcome to the homepage');
 });
