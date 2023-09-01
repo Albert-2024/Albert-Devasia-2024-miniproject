@@ -56,6 +56,6 @@ export const  PRODUCTS = [
     productName: "DON'T TRIP UNSTRUCTURED HAT",
     price: 40.0,
     productImage: product8,
-  }
+  },
 
 ]
